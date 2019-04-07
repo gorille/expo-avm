@@ -16,3 +16,4 @@ collections:
       - {label: "Réponse", name: "answerText", widget: "markdown"}
       - {label: "Image de réponse", name: "answerImage", widget: "image", required: false}
 media_folder: "src/assets"
+public_folder: assets
