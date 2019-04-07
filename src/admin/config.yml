@@ -7,10 +7,11 @@ collections:
     label: "Question" # Used in the UI
     folder: "data/questions" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    identifier_field: "question"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Question", name: "question", widget: "markdown"}
       - {label: "numéro de réponse", name: "answerId", widget: "number"}
       - {label: "Réponse", name: "answerText", widget: "markdown"}
-      - {label: "Image de réponse", name: "answerImage", widget: "image"}
+      - {label: "Image de réponse", name: "answerImage", widget: "image", required: false}
 media_folder: "src/assets"
