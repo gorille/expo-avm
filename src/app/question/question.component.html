@@ -1,0 +1,22 @@
+<div class="row mt-2">
+  <div class="col">
+    <div class="jumbotron">
+      <h1 class="display-6">Question n° {{id}}</h1>
+      <div class="lead" [innerHTML]="question?.question| markdown"></div>
+      <hr class="my-4">
+      <p>Repérez le numéro de la réponse parmis les éléments de répone et saisissez son numéro:</p>
+      <div class="row" *ngIf="error">
+        <div class="col">
+          <div class="alert alert-danger" role="alert">
+            Dommage ! Mauvaise réponse ...
+          </div>
+        </div>
+      </div>
+      <form #f="ngForm">
+        <input class="form-control mb-2" type='number' name="answer" [(ngModel)]="answer" required>
+        <button [disabled]="f.invalid" class="btn btn-success" (click)="validateAnswer()">OK</button>
+        <button *ngIf="error" (click)="skip()" class="btn btn-warning ml-2">Passer la question</button>
+      </form>
+    </div>
+  </div>
+</div>

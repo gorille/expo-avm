@@ -1,0 +1,16 @@
+<div class="row my-4">
+  <div class="col">
+    <img *ngIf="question.answerImage" [src]="question.answerImage" alt="illustration">
+    <img *ngIf="!question.answerImage" src="assets/logo_avm.gif" alt="illustration">
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div [innerHTML]="question.answerText | markdown"></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <button class="btn btn-primary" (click)="next()">Suite</button>
+  </div>
+</div>
